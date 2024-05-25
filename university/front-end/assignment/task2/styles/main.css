@@ -1,0 +1,49 @@
+* {
+  font-family: '仿宋';
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+form .form-header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+form .form-review-no {
+  margin-left: calc((100% - 1300px) / 2);
+}
+form .form-review-no input {
+  border: 0;
+  outline: none;
+  font-size: large;
+}
+
+form .form-table {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: large;
+  text-align: center;
+  width: 1300px;
+  margin: 15px auto;
+}
+form .form-table td {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 15px 0;
+}
+form .form-table input[type='text'],
+form .form-table input[type='number'] {
+  border: 0;
+  outline: none;
+  text-align: center;
+  font-size: x-large;
+}
+form .form-table input[type='text'] {
+  width: 80%;
+}
+form .form-table input[type='radio'] ~ label {
+  margin-right: 40px;
+}

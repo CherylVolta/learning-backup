@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- 1. 导入其他配置 -->
+  <!--  <import resource="xxx.xml"/>-->
+
+  <!-- 2. 注册 bean -->
+  <!-- 2.1 类型冲突时使用 primary/autowire-candidate 指定优先/不自动装配 -->
+  <bean name="artTeacher" class="com.oddy.xml.entity.teacher.ArtTeacher" primary="true"/>
+  <bean name="programTeacher" class="com.oddy.xml.entity.teacher.ProgramTeacher"
+    autowire-candidate="false"/>
+
+  <!-- 2.2 自动装配 -->
+  <!--  <bean name="student" class="com.oddy.xml.entity.student.Student" autowire="byType">-->
+  <bean name="student" class="com.oddy.xml.entity.student.Student" autowire="byType">
+    <!--  2.3 手动装配/依赖注入  -->
+    <!--  2.3.1 setter 依赖注入  -->
+    <!--    <property name="name" value="oddy"/>-->
+    <!--    <property name="teacher" ref="teacher"/>-->
+    <!--  2.3.2 构造方法依赖注入  -->
+    <!--    <constructor-arg name="name" value="oddy"/>-->
+    <!--    <constructor-arg name="teacher" ref="teacher"/>-->
+  </bean>
+
+  <!-- 2.4 bean 属性的继承， 使用频率低。 抽象 bean 仅作为继承使用， 无法获取 -->
+  <bean name="student0" class="com.oddy.xml.entity.student.Student" abstract="true">
+    <property name="name" value="oddy inherit"/>
+  </bean>
+  <bean name="student1" class="com.oddy.xml.entity.student.Student" parent="student0">
+    <property name="teacher" ref="programTeacher"/>
+  </bean>
+  <bean name="student2" class="com.oddy.xml.entity.student.Student" parent="student0">
+    <property name="teacher" ref="artTeacher"/>
+  </bean>
+
+  <!-- 2.5 bean 工厂模式下的三种注册方式 -->
+  <bean name="student3" class="com.oddy.xml.entity.student.StudentFactoryStatic"
+    factory-method="create"/>
+  <bean name="factory" class="com.oddy.xml.entity.student.StudentFactoryDynamic"/>
+  <bean name="student4" factory-bean="factory" factory-method="create"/>
+  <bean name="student5" class="com.oddy.xml.entity.student.StudentFactoryBean"/>
+</beans>

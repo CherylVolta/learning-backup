@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+  <bean name="student" class="com.oddy.aop.entity.student.Student"/>
+  <bean name="studentAOP" class="com.oddy.aop.entity.student.StudentAOP"/>
+
+  <!-- aop 配置 -->
+  <aop:config>
+    <!--  1. 切点配置  -->
+    <!--  execution(修饰符 类全限定名.方法名(参数类型列表))  -->
+    <aop:pointcut id="test"
+      expression="execution(public void com.oddy.aop.entity.student.Student.study(String))"/>
+    <!--  2. 实现 AOP  -->
+    <!--  2.1 切面实现  -->
+    <!--    <aop:aspect ref="studentAOP">-->
+    <!--      &lt;!&ndash;      <aop:after method="afterStudy" pointcut-ref="test"/>&ndash;&gt;-->
+    <!--      <aop:around method="aroundStudy" pointcut-ref="test"/>-->
+    <!--    </aop:aspect>-->
+    <!--  2.2 advisor 实现（更方便） -->
+    <aop:advisor advice-ref="studentAOP" pointcut-ref="test"/>
+  </aop:config>
+
+</beans>

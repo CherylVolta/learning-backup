@@ -1,0 +1,469 @@
+{
+	"info": {
+		"_postman_id": "a7e10d27-4932-4084-932d-89dc4eece4a7",
+		"name": "demo-ssm",
+		"description": "API of [Spring MVC demo](https://github.com/SeagullOddy/demo-ssm).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28923169"
+	},
+	"item": [
+		{
+			"name": "basic",
+			"item": [
+				{
+					"name": "hello",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/hello",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"hello"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "request-params/headers",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Oddy Login",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login-obj",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Oddy Login",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/loginObj",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"loginObj"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cookie-session",
+			"item": [
+				{
+					"name": "cookie-session",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest(\"http://localhost:8080/demo_ssm/\", function (err, response) {\r",
+									"  console.log(response);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/cookie-session",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"cookie-session"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "redirect/forward",
+			"item": [
+				{
+					"name": "redirect",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest(\"http://localhost:8080/demo_ssm/\", function (err, response) {\r",
+									"  console.log(response);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/redirect",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"redirect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forward",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest(\"http://localhost:8080/demo_ssm/\", function (err, response) {\r",
+									"  console.log(response);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/forward",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"forward"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "scope",
+			"item": [
+				{
+					"name": "scope",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest(\"http://localhost:8080/demo_ssm/\", function (err, response) {\r",
+									"  console.log(response);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/scope",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"scope"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "restful",
+			"item": [
+				{
+					"name": "restful-post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/restful/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"restful",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restful-get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/restful",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"restful"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restful-delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/restful",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"restful"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "error",
+			"item": [
+				{
+					"name": "error",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/error/Test%20Error.",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"error",
+								"Test%20Error."
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "json",
+			"item": [
+				{
+					"name": "json",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "json-auto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/json-auto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"json-auto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "json-receive",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"abc\",\r\n  \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/json-receive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"json-receive"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "axios",
+			"item": [
+				{
+					"name": "axios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/demo_ssm/axios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"demo_ssm",
+								"axios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

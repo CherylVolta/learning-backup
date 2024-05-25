@@ -1,0 +1,6 @@
+# 指定使用的配置文件
+# 实现多环境、环境切换
+spring:
+  profiles:
+    # 使用 @@ 引用 maven property
+    active: '@environment@'

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test 3</title>
+    <style>
+      #btns {
+        margin: 5px 0;
+      }
+
+      #table {
+        border-collapse: separate;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-spacing: 0;
+      }
+
+      #table th {
+        background-color: silver;
+      }
+
+      #table th,
+      td {
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        width: 100px;
+      }
+
+      #table .selected {
+        background-color: aquamarine;
+      }
+
+      #table .hover {
+        background-color: aquamarine;
+      }
+    </style>
+    <script src="../a-public-scripts/jquery-3.6.1.min.js"></script>
+  </head>
+  <body>
+    <div id="btns">
+      <button id="select-all">全选</button>
+      <button id="cancel-select">取消选择</button>
+      <button id="select-reverse">反选</button>
+    </div>
+    <div id="table-box">
+      <table id="table">
+        <tr>
+          <th>编号</th>
+          <th>姓名</th>
+          <th>性别</th>
+          <th>年龄</th>
+          <th>地址</th>
+        </tr>
+        <tr class="m" id="m1">
+          <td>1</td>
+          <td>张三</td>
+          <td>男</td>
+          <td>26</td>
+          <td>重庆市</td>
+        </tr>
+        <tr class="m" id="m2">
+          <td>2</td>
+          <td>李四</td>
+          <td>男</td>
+          <td>24</td>
+          <td>重庆市</td>
+        </tr>
+        <tr class="m" id="m3">
+          <td>3</td>
+          <td>王五</td>
+          <td>男</td>
+          <td>24</td>
+          <td>重庆市</td>
+        </tr>
+        <tr class="m" id="m4">
+          <td>4</td>
+          <td>赵六</td>
+          <td>男</td>
+          <td>22</td>
+          <td>重庆市</td>
+        </tr>
+        <tr class="m" id="m5">
+          <td>5</td>
+          <td>田七</td>
+          <td>女</td>
+          <td>25</td>
+          <td>重庆市</td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      $(function () {
+        $('button#select-all').click(function () {
+          $('tr.m').addClass('selected')
+        })
+
+        $('button#cancel-select').click(function () {
+          $('tr.m').removeClass('selected')
+        })
+
+        $('tr.m').click(function () {
+          $(this).toggleClass('selected')
+        })
+
+        $('button#select-reverse').click(function () {
+          $('tr.m').toggleClass('selected')
+        })
+        $('tr.m').hover(
+          function () {
+            $(this).addClass('hover')
+          },
+          function () {
+            $(this).removeClass('hover')
+          }
+        )
+      })
+    </script>
+  </body>
+</html>

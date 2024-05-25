@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>测试</title>
+  <script src="static/test.js"></script>
+</head>
+<body>
+<p>欢迎！</p>
+<!-- 后端传递数据，动态渲染 -->
+<!-- 使用 thymeleaf 的 th 命名空间 -->
+<p th:text="${sessionId}"></p>
+<p th:text="${username}"></p>
+<p th:text="${password}"></p>
+</body>
+</html>

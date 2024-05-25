@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <!-- 导入 Spring Boot 默认的 Logback 配置 -->
+  <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+  <!-- 需要修改的 property 在这里重写即可 -->
+  <!-- %X{sessionId} 用于获取通过 MDC 传入的 xxx 键值对的值 -->
+  <!-- %X 是占位符 -->
+  <property name="CONSOLE_LOG_PATTERN"
+    value="%clr(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd'T'HH:mm:ss}}){faint} %clr([%X{sessionId}]){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%10.10t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+
+  <!-- 配置日志打印器 Appender（一般分控制台、文件两种） -->
+  <!-- 控制台 -->
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <!--   用 ${xxx} 的方式引用 property  -->
+      <!--   这里是引用 Spring Boot 默认配置中定义的 property   -->
+      <!--   SLF4J 提供的日志字段不多，如果需要插入自定义的内容，需要使用 MDC 机制，部分见 TestController   -->
+      <!--   MDC，即 Mapped Diagnostic Context（映射诊断上下文）   -->
+      <!--   通过 MDC 传入信息之后，当前线程下输出的日志都能获取我们提供的信息（本质是用 ThreadLocal 实现的）   -->
+      <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+      <charset>${CONSOLE_LOG_CHARSET}</charset>
+    </encoder>
+  </appender>
+  <!-- 文件 -->
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <encoder>
+      <pattern>${FILE_LOG_PATTERN}</pattern>
+      <charset>${FILE_LOG_CHARSET}</charset>
+    </encoder>
+    <!--  自定义滚动策略，防止日志文件无限变大（日志文件到一定大小时重新创建新日志文件）  -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <!--   文件保存位置和命名规则   -->
+      <fileNamePattern>log/%d{yyyy-MM-dd}-spring-%i.log</fileNamePattern>
+      <!--   到期自动清理   -->
+      <cleanHistoryOnStart>true</cleanHistoryOnStart>
+      <!--   最大日志保留时间   -->
+      <maxHistory>7</maxHistory>
+      <!--   单个日志文件最大大小   -->
+      <maxFileSize>10MB</maxFileSize>
+    </rollingPolicy>
+  </appender>
+
+  <!-- 多环境配置 -->
+  <springProfile name="dev">
+    <!-- 指定日志输出级别，以及启用的 Appender -->
+    <root level="INFO">
+      <appender-ref ref="CONSOLE"/>
+      <appender-ref ref="FILE"/>
+    </root>
+  </springProfile>
+  <springProfile name="prod">
+    <root level="INFO">
+      <appender-ref ref="FILE"/>
+    </root>
+  </springProfile>
+
+</configuration>

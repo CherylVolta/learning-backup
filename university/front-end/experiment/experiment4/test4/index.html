@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test 4</title>
+    <script>
+      function dayInZH(day) {
+        switch (day) {
+          case 0:
+            return '星期日'
+          case 1:
+            return '星期一'
+          case 2:
+            return '星期二'
+          case 3:
+            return '星期三'
+          case 4:
+            return '星期四'
+          case 5:
+            return '星期五'
+          case 6:
+            return '星期六'
+        }
+        return '错误星期数'
+      }
+
+      let dateNow = new Date()
+      document.write(
+        '今天的日期是：' +
+          dateNow.getFullYear() +
+          '年' +
+          (dateNow.getMonth() + 1) +
+          '月' +
+          dateNow.getDate() +
+          '日&emsp;' +
+          dayInZH(dateNow.getDay()) +
+          '&emsp;现在时间是：' +
+          dateNow.getHours() +
+          '时' +
+          dateNow.getMinutes() +
+          '分' +
+          dateNow.getSeconds() +
+          '秒'
+      )
+    </script>
+  </head>
+  <body></body>
+</html>

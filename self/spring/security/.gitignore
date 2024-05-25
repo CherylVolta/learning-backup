@@ -1,0 +1,40 @@
+### IDEA Basic template
+### Builds & Outs ###
+out/
+target/
+
+### IntelliJ IDEA ###
+**/.idea/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+## Maven ###
+.mvn/
+mvnw
+mvnw.cmd
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store

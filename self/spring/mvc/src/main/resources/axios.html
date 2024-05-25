@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<p>My Info!</p>
+<p>My Username: <span id="username"></span></p>
+<p>My Password: <span id="password"></span></p>
+<button onclick="getMyInfo()">Get It!</button>
+</body>
+<script>
+  function getMyInfo() {
+    axios.get('/demo_ssm/json-auto')
+    .then(function (response) {
+      console.log(response);
+      document.getElementById('username').innerHTML = response.data.username;
+      document.getElementById('password').innerHTML = response.data.password;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+</script>
+</html>

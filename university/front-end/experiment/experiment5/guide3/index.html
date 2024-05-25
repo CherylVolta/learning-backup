@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide 3</title>
+  </head>
+  <body>
+    <script>
+      let user = {
+        name: 'SeagullOddy',
+        size: {
+          height: 185,
+          weight: 75,
+        },
+      }
+      let id = Symbol('id')
+      user[id] = 1
+
+      function cloneDeep(obj) {
+        let newObj = obj.constructor === Array ? [] : {}
+        if (typeof obj !== 'object') {
+          return
+        } else {
+          for (var i in obj) {
+            if (typeof obj[i] === 'object') {
+              newObj[i] = cloneDeep(obj[i])
+            } else {
+              newObj[i] = obj[i]
+            }
+          }
+        }
+        return newObj
+      }
+
+      let cloneUser = cloneDeep(user)
+      cloneUser.size.height = 190
+      cloneUser.size.weight = 80
+      cloneUser.name = 'Nop'
+      cloneUser[id] = 2
+
+      alert(user[id] + ': ' + JSON.stringify(user))
+      alert(cloneUser[id] + ': ' + JSON.stringify(cloneUser))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+body {
+  font-size: x-large;
+  margin: 0;
+}
+
+a,
+a:visited {
+  color: black;
+}
+
+.pull-down-menu-sample,
+.side-navigation-sample {
+  float: left;
+  width: calc(50% - 40px);
+  margin-left: 20px;
+}
+
+.pull-down-menu {
+  width: fit-content;
+}
+
+.pull-down-menu .menu-body {
+  background-color: green;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+.pull-down-menu .menu-list {
+  border: 1px outset gray;
+  position: absolute;
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pull-down-menu:hover .menu-list {
+  display: block;
+}
+
+.pull-down-menu .menu-item {
+  list-style: none;
+}
+
+.pull-down-menu .menu-item a {
+  display: block;
+  text-decoration: none;
+  width: 150px;
+  padding: 20px;
+}
+
+.pull-down-menu .menu-item a:hover {
+  background-color: gray;
+  color: white;
+}
+
+.side-navigation {
+  background-color: rgb(241, 241, 241);
+  padding: 0;
+}
+
+.side-navigation .navigation-item {
+  list-style: none;
+  margin: 0;
+}
+
+.side-navigation .navigation-item a {
+  display: block;
+  text-decoration: none;
+  width: calc(100% - 60px);
+  padding: 30px;
+}
+
+.side-navigation .navigation-item a:hover {
+  background-color: gray;
+  color: white;
+}

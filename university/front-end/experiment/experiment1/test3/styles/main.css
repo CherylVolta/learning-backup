@@ -1,0 +1,60 @@
+* {
+  font-family: '仿宋';
+  text-align: center;
+}
+
+body {
+  margin: 0;
+}
+
+iframe {
+  box-sizing: border-box;
+}
+
+.content {
+  text-indent: 2em;
+  color: red;
+  font-size: 54px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.frame-sets-html,
+.frame-sets-body {
+  height: 100%;
+}
+
+.top-frame {
+  width: 100%;
+  height: 150px;
+}
+
+.left-frame {
+  float: left;
+  width: calc(20% - 4px);
+  height: calc(100% - 154px);
+}
+
+.right-frame {
+  float: right;
+  width: calc(80% - 4px);
+  height: calc(100% - 154px);
+}
+
+.header-title {
+  text-align: center;
+  font-size: 54px;
+}
+
+.navigation-title {
+  font-size: 35px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.navigation-link {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  margin-block: 50px;
+}

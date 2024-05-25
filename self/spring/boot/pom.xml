@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.1.2</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <groupId>com.oddy</groupId>
+  <artifactId>demo-spring-boot</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>demo-spring-boot</name>
+  <description>demo-spring-boot</description>
+
+  <!--  !!! 部署外部 Tomcat  -->
+  <!-- 以 war 的形式打包 -->
+  <!-- <package>war</package> -->
+
+  <properties>
+    <java.version>17</java.version>
+  </properties>
+
+  <dependencies>
+    <!--  Spring Boot Starter Basic  -->
+    <!--  所有的 Spring Boot 依赖都是以 starter 的形式命名的  -->
+    <!--  如 Web 相关依赖是 spring-boot-starter-web  -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.yaml</groupId>
+          <artifactId>snakeyaml</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+      <version>2.1</version>
+    </dependency>
+
+    <!--  Spring Boot Starter Web  -->
+    <!--  Spring Boot Starter Web 中包含了 Spring MVC 以及 Spring Web 的相关依赖  -->
+    <!--  导入之后，无需配置就能自动启动内置的 Tomcat 服务器，并正常访问 -->
+    <!--  1. 无需实现 DispatcherServletInitializer 就能使用 Spring MVC -->
+    <!--  2. 无需配置 MessageConvert 就能将 Controller 中返回的对象转换为 JSON 字符串格式（默认使用 Jackson & Gson 实现）  -->
+    <!--  3. 需要 MVC 配置时，与往常一样创建配置类即可  -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <!--   !!! 部署外部 Tomcat   -->
+      <!--   如果需要部署在 Tomcat 中，需要排除内置的 Tomcat 依赖，导入 Servlet 依赖   -->
+      <!--    <exclusions>  -->
+      <!--      <exclusion>  -->
+      <!--        <groupId>org.springframework.boot</groupId>  -->
+      <!--        <artifactId>spring-boot-starter-tomcat</artifactId>  -->
+      <!--      </exclusion>  -->
+      <!--    </exclusions>  -->
+    </dependency>
+    <!--   !!! 部署外部 Tomcat   -->
+    <!--  <dependency>  -->
+    <!--    <groupId>jakarta.servlet</groupId>  -->
+    <!--    <artifactId>jakarta.servlet-api</artifactId>  -->
+    <!--    <scope>provided</scope>  -->
+    <!--  </dependency>  -->
+    <!--  Spring Boot Starter Security  -->
+    <!--  1. 自动为我们创建了一个测试用户  -->
+    <!--  2. 需要 Security 配置时，与往常一样创建配置类即可  -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <!--  Thymeleaf  -->
+    <!--  1. 无需配置视图解析器  -->
+    <!--  2. 需要将静态资源文件放在 static 目录下 -->
+    <!--  3. 需要将 HTML（视图）文件放在 templates 目录下  -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    <!--  Spring JDBC | Mybatis (Plus) | JPA & Database Driver  -->
+    <!--  1. Spring JDBC 提供了 JdbcTemplate，封装了常用的 JDBC 操作  -->
+    <!--  2. Mybatis 无需实现 SqlSessionTemplate/SqlSessionFactoryBean  -->
+    <!--  3. Mybatis 无需配置 MapperScan，使用 @Mapper 注解即可  -->
+    <!--  4. 需要配置 DataSource（在配置文件中编写）  -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.mybatis.spring.boot</groupId>-->
+<!--      <artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--      <version>3.0.2</version>-->
+<!--    </dependency>-->
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-boot-starter</artifactId>
+      <version>3.5.3.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-generator</artifactId>
+      <version>3.5.3.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity-engine-core</artifactId>
+      <version>2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>8.1.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <!--  Email  -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-mail</artifactId>
+    </dependency>
+    <!--  Validation  -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+    <!--  Swagger  -->
+    <!--  访问 /swagger-ui/index.html 即可查看开发文档  -->
+    <!--  只为 Rest 风格的接口生成文档  -->
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>2.2.0</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.yaml</groupId>
+          <artifactId>snakeyaml</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <!--  Actuator  -->
+    <!--  项目运行监控  -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <!--  Others  -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <!-- 多环境配置，不同配置文件对应不同生产环境（给 environment 变量赋不同的值） -->
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <environment>dev</environment>
+      </properties>
+    </profile>
+    <profile>
+      <id>prod</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <environment>prod</environment>
+      </properties>
+    </profile>
+  </profiles>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.graalvm.buildtools</groupId>
+        <artifactId>native-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+            </exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+    <resources>
+      <!--   构建时的文件规则   -->
+      <!--   先排除所有的配置文件   -->
+      <resource>
+        <directory>src/main/resources</directory>
+        <excludes>
+          <!--     使用通配符     -->
+          <exclude>application*.yaml</exclude>
+        </excludes>
+      </resource>
+      <!--   根据环境引入对应环境的配置文件   -->
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>application.yaml</include>
+          <!--     使用 ${} 引用 maven property     -->
+          <include>application-${environment}.yaml</include>
+        </includes>
+      </resource>
+    </resources>
+  </build>
+
+</project>

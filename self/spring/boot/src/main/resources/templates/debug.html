@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+尝试一下各种接口：
+<button onclick="test()">Test</button>
+<button onclick="testObjectYaml()">Test Object Yaml</button>
+<button onclick="testObjectQuery()">Test Object Query</button>
+<button onclick="testObjectQueryJPA()">Test Object Query JPA</button>
+<button onclick="testLogbackMDC()">Test Logback MDC</button>
+<button onclick="testEmail()">Test Email</button>
+</body>
+<script>
+  function test() {
+    fetch('/test')
+    .then(response => response.text())
+    .then(data => alert(data))
+    .catch(error => alert(error))
+  }
+
+  function testObjectYaml() {
+    fetch('/test-object-yaml')
+    .then(response => response.text())
+    .then(data => alert(data))
+    .catch(error => alert(error))
+  }
+
+  function testObjectQuery() {
+    let id = '';
+    while (id === '') {
+      id = prompt('请输入查询的对象 id：', '')
+    }
+    fetch('/test-object-query?id=' + id)
+    .then(response => response.text())
+    .then(data => alert(data))
+    .catch(error => alert(error))
+  }
+
+  function testObjectQueryJPA() {
+    let id = '';
+    while (id === '') {
+      id = prompt('请输入查询的对象 id：', '')
+    }
+    fetch('/test-object-query-jpa?id=' + id)
+    .then(response => response.text())
+    .then(data => alert(data))
+    .catch(error => alert(error))
+  }
+
+  function testLogbackMDC() {
+    fetch('/test-logback-mdc')
+    .then(response => response.text())
+    .then(data => alert(data))
+    .catch(error => alert(error))
+  }
+
+  function testEmail() {
+    let to = '';
+    while (to === '') {
+      to = prompt('请输入接收邮件的邮箱：', '')
+    }
+    fetch('/test-email?to=' + to)
+    .then(response => response.text())
+    .then(data => alert(data))
+    .catch(error => alert(error))
+  }
+</script>
+</html>

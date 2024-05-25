@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/schema/mybatis-3-config.dtd">
+<!-- 使用配置文件配置 mybatis -->
+<configuration>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/demo_spring"/>
+        <property name="username" value="root"/>
+        <property name="password" value="oddy"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <!-- 指定 mapper 方式 1 -->
+  <!--  <mappers>-->
+  <!--    <mapper class="com.oddy.mybatis.mapper.StudentMapper"/>-->
+  <!--  </mappers>-->
+</configuration>

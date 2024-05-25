@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide 2</title>
+  </head>
+  <body>
+    <script>
+      let user = {
+        name: 'SeagullOddy',
+      }
+      alert('user name: ' + user.name)
+
+      // 创建一个 Symbol 对象
+      let id = Symbol('id')
+
+      /*
+        这里是将 Symbol 对象的值作为属性名给 user ！！！
+        Symbol 对象可以看作一个常量，
+        它的值可以看作是随机生成且唯一的字符串，假设是 'xasdaihFJWEBw'，
+        所以上面创建的 Symbol 对象，它的值是字符串 'xasdaihFJWEBw' 而不是 'id'
+        进而下面提供给 user 对象的属性名也不是字符串 'id'，而是 'xasdaihFJWEBw'
+      */
+      user[id] = {
+        studentId: 2,
+        courseId: 1,
+      }
+
+      /*
+        使用 对象[属性名] 的方式来访问属性值，成功，
+        因为这里的 id 是变量 id，引用了先前的 Symbol 对象
+      */
+      alert('user [id]: ' + user[id]?.studentId)
+
+      /*
+        使用 对象.属性名 的方式来访问属性值，失败，
+        因为这里的 user.id 相当于 user['id']
+        user 对象中并没有一个名为 'id' 的属性
+      */
+      alert('user id: ' + user.id?.studentId)
+
+      // 使用 Symbol 对象作为属性名的属性不会被转换为 JSON 字符串
+      alert('user: ' + JSON.stringify(user))
+    </script>
+  </body>
+</html>

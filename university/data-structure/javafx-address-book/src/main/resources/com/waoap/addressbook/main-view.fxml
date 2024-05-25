@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="645.0" prefWidth="500.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.waoap.addressbook.MainController">
+    <TextField fx:id="keywordFieldName" layoutX="15.0" layoutY="15.0" prefWidth="85.0" promptText="查找姓名"/>
+    <Button fx:id="searchButton" layoutX="375.0" layoutY="15.0" mnemonicParsing="false" text="查找"/>
+    <ListView fx:id="contactsList" layoutX="15.0" layoutY="60.0" prefHeight="540.0" prefWidth="450.0"/>
+    <Button fx:id="addButton" layoutX="435.0" layoutY="15.0" mnemonicParsing="false" text="新增"/>
+    <Text layoutX="15.0" layoutY="626.0" strokeType="OUTSIDE" strokeWidth="0.0" text="操作日志："/>
+    <Text fx:id="logField" layoutX="104.0" layoutY="626.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT"
+          wrappingWidth="361.0"/>
+    <VBox fx:id="navigationList" layoutX="478.0" layoutY="60.0" prefHeight="495.0" prefWidth="8.0">
+        <Label text="#"/>
+        <Label text="A"/>
+        <Label text="B"/>
+        <Label text="C"/>
+        <Label text="D"/>
+        <Label text="E"/>
+        <Label text="F"/>
+        <Label text="G"/>
+        <Label text="H"/>
+        <Label text="I"/>
+        <Label text="J"/>
+        <Label text="K"/>
+        <Label text="L"/>
+        <Label text="M"/>
+        <Label text="N"/>
+        <Label text="O"/>
+        <Label text="P"/>
+        <Label text="Q"/>
+        <Label text="R"/>
+        <Label text="S"/>
+        <Label text="T"/>
+        <Label text="U"/>
+        <Label text="V"/>
+        <Label text="W"/>
+        <Label text="X"/>
+        <Label text="Y"/>
+        <Label text="Z"/>
+    </VBox>
+    <TextField fx:id="keywordFieldTelephone" layoutX="105.0" layoutY="15.0" promptText="查找电话"/>
+    <TextField fx:id="keywordFieldEmail" layoutX="225.0" layoutY="15.0" prefWidth="140.0" promptText="查找邮箱"/>
+</AnchorPane>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide 1</title>
+  </head>
+  <body>
+    <h1 id="text"></h1>
+    <script>
+      function gotoCNBlogs() {
+        window.open('https://www.cnblogs.com')
+      }
+
+      let timeOut = 5000
+      let interval = window.setInterval(function () {
+        if (timeOut !== 0) {
+          document.getElementById('text').innerText =
+            (timeOut -= 25) + 'ms 后跳转！'
+        } else {
+          window.clearInterval(interval)
+          document.getElementById('text').innerText = '跳转完毕！'
+        }
+      }, 25)
+
+      window.setTimeout('gotoCNBlogs()', 5100) // 由于 js 延迟实际上应该为 2.6s 左右
+    </script>
+  </body>
+</html>

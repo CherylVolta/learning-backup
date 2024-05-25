@@ -1,0 +1,72 @@
+/*
+  css 属性规范：
+    <位置>：position、top、right、z-index、display、float 等；
+    <大小>：width、height、padding、margin；
+    <文字>：font、line-height、letter-spacing、color、text-align 等；
+    <背景>：background、border 等；
+    <其他>：animation、transition 等；
+*/
+
+$max-width: min(1200px, 80%);
+
+$color-primary: rgb(33, 33, 33);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// 文本容器
+.text-holder {
+  color: gray;
+  font-size: 30px;
+  text-align: center;
+
+  background-color: $color-primary;
+}
+
+// 导航栏
+.navigation-bar {
+  height: 100px;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  line-height: 100px;
+
+  @extend .text-holder;
+}
+
+// 正文
+.content {
+  width: $max-width;
+  margin: 0 auto;
+
+  // 正文行
+  &__row {
+    height: 500px;
+    margin: 10px auto;
+
+    line-height: 500px;
+
+    // flex 布局
+    &--flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  // 正文内容
+  &__main {
+    width: calc(70% - 5px);
+
+    @extend .text-holder;
+  }
+
+  // 正文侧边栏
+  &__sidebar {
+    width: calc(30% - 5px);
+
+    @extend .text-holder;
+  }
+}

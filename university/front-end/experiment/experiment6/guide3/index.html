@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide 3</title>
+    <style>
+      * {
+        font-family: '微软雅黑';
+        font-size: 14px;
+      }
+
+      a img {
+        border: none;
+      }
+
+      #control-slide {
+        width: 360px;
+        height: 28px;
+        color: #666;
+        margin: 0;
+        padding: 0;
+        background-color: #5899ce;
+      }
+
+      #control-slide li {
+        float: left;
+        width: 45px;
+        height: 24px;
+        line-height: 24px;
+        background-color: #5899ce;
+        text-align: center;
+        padding-bottom: 3px;
+      }
+
+      #control-slide li a {
+        text-decoration: none;
+        color: #003276;
+        cursor: pointer;
+      }
+
+      #control-slide li.current {
+        width: 45px;
+        background-color: black;
+      }
+
+      #control-slide li.current a {
+        color: white;
+      }
+
+      .news-image {
+        width: 360px;
+        height: 220px;
+      }
+
+      li {
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="news-box">
+      <ul id="control-slide">
+        <li id="slide-1" onmouseover="setCurrentTab(1);" class="current">
+          <a href="#" target="-blank">国际</a>
+        </li>
+        <li id="slide-2" onmouseover="setCurrentTab(2);">
+          <a href="#" target="-blank">娱乐</a>
+        </li>
+        <li id="slide-3" onmouseover="setCurrentTab(3);">
+          <a href="#" target="-blank">体育</a>
+        </li>
+        <li id="slide-4" onmouseover="setCurrentTab(4);">
+          <a href="#" target="-blank">汽车</a>
+        </li>
+        <li id="slide-5" onmouseover="setCurrentTab(5);">
+          <a href="#" target="-blank">军事</a>
+        </li>
+        <li id="slide-6" onmouseover="setCurrentTab(6);">
+          <a href="#" target="-blank">社会</a>
+        </li>
+        <li id="slide-7" onmouseover="setCurrentTab(7);">
+          <a href="#" target="-blank">游戏</a>
+        </li>
+        <li id="slide-8" onmouseover="setCurrentTab(8);">
+          <a href="#" target="-blank">科技</a>
+        </li>
+      </ul>
+      <div id="news-tab-list">
+        <div class="news-tab" id="tab-1">
+          <a href="#">
+            <img class="news-image" src="images/1.jpg" alt="" />
+          </a>
+          <h3>冬奥生活抵达韩国</h3>
+        </div>
+        <div class="news-tab" id="tab-2" style="display: none">
+          <a href="#">
+            <img class="news-image" src="images/2.jpg" alt="" />
+          </a>
+          <h3>小贝突袭球场切磋球技 与“迷弟”大玩自拍无架子</h3>
+        </div>
+        <div class="news-tab" id="tab-3" style="display: none">
+          <a href="#">
+            <img class="news-image" src="images/3.jpg" alt="" />
+          </a>
+          <h3>欧冠小组赛B 组：凯尔特人 Vs 拜仁慕尼黑</h3>
+        </div>
+        <div class="news-tab" id="tab-4" style="display: none">
+          <a href="#">
+            <img class="news-image" src="images/4.jpg" alt="" />
+          </a>
+          <h3>斯柯达文化之旅-上</h3>
+        </div>
+        <div class="news-tab" id="tab-5" style="display: none">
+          <a href="#">
+            <img class="news-image" src="images/5.jpg" alt="" />
+          </a>
+          <h3>枪声四起，武警官兵中原腹地上演“枪王争霸”</h3>
+        </div>
+        <div class="news-tab" id="tab-6" style="display: none">
+          <a href="#">
+            <img class="news-image" src="images/6.jpg" alt="" />
+          </a>
+          <h3>去年万圣节吓哭同学的小女孩</h3>
+        </div>
+        <div class="news-tab" id="tab-7" style="display: none">
+          <a href="#">
+            <img class="news-image" src="images/7.jpg" alt="" />
+          </a>
+          <h3>《绝地求生：大逃杀》中国活跃玩家数量达 600 万</h3>
+        </div>
+        <div class="news-tab" id="tab-8" style="display: none">
+          <a href="#">
+            <img class="news-image" src="images/8.jpg" alt="" />
+          </a>
+          <h3>iPhone X 真机刘海出现瑕疵</h3>
+        </div>
+      </div>
+    </div>
+    <script>
+      function setCurrentTab(index) {
+        for (let i = 1; i <= 8; i++) {
+          if (i == index) {
+            document.getElementById('slide-' + i).className = 'current'
+            document.getElementById('tab-' + i).style.display = 'block'
+          } else {
+            document.getElementById('slide-' + i).className = ''
+            document.getElementById('tab-' + i).style.display = 'none'
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
