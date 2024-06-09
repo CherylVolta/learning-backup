@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fruit.mapper.ContractMapper">
+
+  <resultMap id="ContractVoRM" type="com.fruit.entity.ContractVo">
+    <id property="contractId" column="contractid" jdbcType="VARCHAR"/>
+    <result property="barCode" column="barcode" jdbcType="VARCHAR"/>
+    <result property="type" column="type" jdbcType="INTEGER"/>
+    <result property="retailerName" column="retailername" jdbcType="VARCHAR"/>
+    <result property="createTime" column="createtime" jdbcType="TIMESTAMP"/>
+  </resultMap>
+
+  <resultMap id="ContractRM" type="com.fruit.entity.Contract">
+    <id property="contractId" column="contractid" jdbcType="VARCHAR"/>
+    <result property="barCode" column="barcode" jdbcType="VARCHAR"/>
+    <result property="type" column="type" jdbcType="INTEGER"/>
+    <result property="createTime" column="createtime" jdbcType="TIMESTAMP"/>
+    <association property="retailer" javaType="com.fruit.entity.Retailer">
+      <result property="retailerId" column="retailerid" jdbcType="VARCHAR"/>
+      <result property="name" column="retailername" jdbcType="VARCHAR"/>
+      <result property="telephone" column="telephone" jdbcType="VARCHAR"/>
+      <result property="address" column="address" jdbcType="VARCHAR"/>
+    </association>
+    <collection property="commoditiesList" ofType="com.fruit.entity.CommoditiesVo">
+      <id property="fruitId" column="fruitid" jdbcType="VARCHAR"/>
+      <result property="name" column="fruitname" jdbcType="VARCHAR"/>
+      <result property="price" column="price" jdbcType="DOUBLE"/>
+      <result property="locality" column="locality" jdbcType="VARCHAR"/>
+      <result property="number" column="number" jdbcType="INTEGER"/>
+      <collection property="accessoryList" ofType="com.fruit.entity.Accessory">
+        <result property="name" column="accessoryname" jdbcType="VARCHAR"/>
+        <result property="price" column="accessoryprice" jdbcType="DOUBLE"/>
+      </collection>
+    </collection>
+  </resultMap>
+
+  <select id="get" parameterType="string" resultMap="ContractRM">
+    select contract.contractid,
+           contract.barcode,
+           contract.type,
+           contract.createtime,
+           retailer.retailerid,
+           retailer.name    as retailername,
+           retailer.telephone,
+           retailer.address,
+           commodities.fruitid,
+           commodities.name as fruitname,
+           commodities.price,
+           commodities.locality,
+           middle_tab.number,
+           accessory.name   as accessoryname,
+           accessory.price  as accessoryprice
+    from contract
+           left join retailer on contract.retailerid = retailer.retailerid,
+         middle_tab
+           left join commodities on middle_tab.fruitid = commodities.fruitid
+           left join accessory on middle_tab.fruitid = accessory.fruitid
+    where middle_tab.contractid = #{contractId}
+      and contract.contractid = #{contractId}
+  </select>
+
+  <sql id="query_contract_where">
+    <if test="barCode != null">
+      and barcode like #{barCode}
+    </if>
+    <if test="type !=null">
+      and type like #{type}
+    </if>
+    <if test="startTime !=null">
+      <![CDATA[and contract.createtime >= DATE_FORMAT(#{startTime},'%Y-%m-%d %H:%i:%s') ]]></if>
+    <if test="endTime !=null">
+      <![CDATA[and contract.createtime <= DATE_FORMAT(#{endTime},'%Y-%m-%d %H:%i:%s') ]]></if>
+  </sql>
+
+  <select id="findContractList" parameterType="map" resultMap="ContractVoRM">
+    select contract.*, retailer.name as retailername
+    from contract left join retailer on
+    contract.retailerid = retailer.retailerid
+    where 1=1
+    <include refid="query_contract_where"/>
+    <if test="retailerName !=null">
+      and retailer.name like #{retailerName}
+    </if>
+    <if test="startPage != null and pageSize!=null">LIMIT #{startPage},#{pageSize}</if>
+  </select>
+
+  <select id="count" parameterType="map" resultType="int">
+    select count(*) from contract
+    where 1=1
+    <include refid="query_contract_where"/>
+  </select>
+
+  <select id="getMaxBarCode" resultType="string">
+    select max(barcode)
+    from contract
+  </select>
+
+  <insert id="insert" parameterType="com.fruit.entity.Contract">
+    insert into contract (contractid, barcode, type, retailerid, createtime)
+    values (#{contractId,jdbcType=VARCHAR}, #{barCode,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER},
+            #{retailer.retailerId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+
+  <insert id="insertMiddleTab" parameterType="com.fruit.entity.MiddleTab">
+    insert into middle_tab (middleid, contractid, fruitid, number)
+    values (#{middleId,jdbcType=VARCHAR}, #{contractId,jdbcType=VARCHAR},
+            #{fruitId,jdbcType=VARCHAR}, #{number,jdbcType=INTEGER})
+  </insert>
+
+  <update id="update" parameterType="com.fruit.entity.Contract">
+    update contract
+    <set>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="retailer != null">
+        retailerid = #{retailer.retailerId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where contractid = #{contractId,jdbcType=VARCHAR}
+  </update>
+
+  <delete id="deleteMiddleTab" parameterType="string">
+    delete
+    from middle_tab
+    where contractid = #{contractId}
+  </delete>
+
+  <delete id="deleteById" parameterType="string">
+    delete
+    from contract
+    where contractid = #{contractId}
+  </delete>
+
+  <delete id="delete" parameterType="string">
+    delete
+    from contract
+    where contract.contractid in
+    <foreach collection="array" item="contractId" open="(" separator="," close=")">
+      #{contractId}
+    </foreach>
+  </delete>
+
+</mapper>

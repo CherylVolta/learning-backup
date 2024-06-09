@@ -34,7 +34,8 @@
   - `/data-structure` [数据结构（Java）](university/data-structure)
   - `/digital-image-process` [数字图像处理（Matlab）](university/digital-image-process)
   - `/front-end` [Web 开发（前端）](university/front-end)
-  - `java-advanced` [高级 Java](university/java-advanced)
+  - `/java-advanced` [高级 Java](university/java-advanced)
+  - `/java-enterprise` [企业 Java](university/java-enterprise)
 
 <p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 

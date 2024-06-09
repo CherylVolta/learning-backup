@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.waoap.trafficinfodesk.ui.Main">
+    <Label layoutX="25.0" layoutY="25.0" text="城市管理："/>
+    <Label layoutX="25.0" layoutY="116.2" text="列车时刻表管理："/>
+    <Label layoutX="25.0" layoutY="207.4" text="方案查询："/>
+    <Button layoutX="65.0" layoutY="65.0" mnemonicParsing="false" onAction="#addCity" text="添加城市"/>
+    <Button layoutX="165.0" layoutY="65.0" mnemonicParsing="false" onAction="#removeCity" text="删除城市"/>
+    <Button layoutX="65.0" layoutY="156.2" mnemonicParsing="false" onAction="#addFrequency" text="添加班次"/>
+    <Button layoutX="165.0" layoutY="156.2" mnemonicParsing="false" onAction="#removeFrequency" text="删除班次"/>
+    <Button layoutX="265.0" layoutY="156.2" mnemonicParsing="false" onAction="#queryFrequency" text="查询班次"/>
+    <Button layoutX="365.0" layoutY="156.2" mnemonicParsing="false" onAction="#modifyFrequency" text="修改班次"/>
+    <Button layoutX="65.0" layoutY="247.4" mnemonicParsing="false" onAction="#querySolution" text="智能查询"/>
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="450.0" layoutY="217.0" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@train.png"/>
+    </ImageView>
+</AnchorPane>

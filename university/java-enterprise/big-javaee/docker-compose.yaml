@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  mysql-server:
+    container_name: app_mysql
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: oddy
+      TZ: 'Asia/Shanghai'
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql-1113:/var/lib/mysql
+    restart: always
+  tomcat-server:
+    container_name: app_tomcat
+    build: .
+    ports:
+      - '8080:8080'
+    depends_on:
+      - mysql-server
+
+volumes:
+  mysql-1113:
+    external: true

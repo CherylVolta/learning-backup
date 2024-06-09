@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-size: 18px;
+  font-family: 'Monoid', 'Sarasa Mono TC', 'Courier New', Courier, monospace;
+}
+
+body {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+dialog {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dialog-content {
+  min-width: min(700px, 90%);
+
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+input[type='text'],
+input[type='password'] {
+  margin: 0 25px 0 5px;
+  padding: 5px;
+
+  border-width: 0 0 1px;
+  border-color: gray;
+}
+
+input[type='text']:hover,
+input[type='password']:hover {
+  border-width: 0 0 2px;
+  border-color: black;
+}
+
+input[type='text']:focus,
+input[type='password']:focus {
+  outline: none;
+  border-width: 0 0 3px;
+  border-color: black;
+}
+
+.block-center {
+  display: block;
+  margin: 0 auto;
+}
+
+.header {
+  margin: 20px;
+
+  text-align: center;
+}
+
+.button {
+  padding: 10px 20px;
+
+  border: none;
+  border-radius: 6px;
+  color: slategray;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #ddd;
+}
+
+.button:active {
+  background-color: #ccc;
+}
+
+.card {
+  min-width: 700px;
+  margin: 30px;
+  padding: 20px;
+
+  background-color: tomato;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  width: 100%;
+  height: 50px;
+
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-body {
+  height: 100%;
+  margin-top: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  color: white;
+}
+
+.operation-button {
+  display: block;
+
+  background: none;
+  border: none;
+  color: rgb(255, 213, 220);
+  font-size: 20px;
+}
+
+.operation-button:hover {
+  color: white;
+}
+
+.operation-button:active {
+  color: pink;
+}

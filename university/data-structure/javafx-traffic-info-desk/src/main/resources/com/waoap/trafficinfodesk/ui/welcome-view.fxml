@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.waoap.trafficinfodesk.ui.Welcome">
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="225.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@title-background.png" />
+    </ImageView>
+    <Label fx:id="mainTitle" layoutX="174.0" layoutY="70.0" text="全国交通咨询台">
+        <font>
+            <Font name="System Bold" size="36.0" />
+        </font>
+    </Label>
+    <Label layoutX="188.0" layoutY="190.0" text="欢迎使用全国交通咨询台(≧∇≦)ﾉ" />
+    <Label layoutX="188.0" layoutY="240.0" text="v1.0.0 -- Alpha    by：Waoap" />
+    <Button layoutX="183.0" layoutY="304.0" mnemonicParsing="false" onAction="#launchApp" text="进入" />
+    <Button layoutX="364.0" layoutY="304.0" mnemonicParsing="false" onAction="#aboutApp" text="关于" />
+</AnchorPane>

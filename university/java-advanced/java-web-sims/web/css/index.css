@@ -1,0 +1,45 @@
+@import 'base.css';
+
+#input-params-card-body {
+  flex-direction: column;
+}
+
+#input-params-card-body > div {
+  display: none;
+  width: 100%;
+
+  flex-direction: column;
+  text-align: center;
+}
+
+#input-params-card-body > div > * {
+  margin: 10px 0;
+}
+
+#input-params-card-body > div > input[type="text"] {
+  color: white;
+  background: none;
+  border-color: #ccc;
+}
+
+#input-params-card-body > div > input[type="text"]:hover {
+  border-color: #ddd;
+}
+
+#input-params-card-body > div > input[type="text"]:focus {
+  border-color: white;
+}
+
+#op-result-card-body {
+  flex-direction: column;
+}
+
+#op-result-card-body table {
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+
+#op-result-card-body td {
+  padding: 10px 20px;
+}
