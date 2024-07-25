@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="?attr/colorBackgroundColorful">
+    <TextView
+      android:id="@+id/tv_back"
+      android:layout_width="40dp"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      android:text="&lt;"
+      android:textSize="30sp" />
+    <ImageView
+      android:id="@+id/iv_parcel_image_parcel_details"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_margin="10dp"
+      android:scaleType="centerCrop"
+      android:src="@mipmap/ic_launcher" />
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_marginLeft="10dp"
+      android:gravity="center"
+      android:text="查看商品" />
+    <TextView
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1" />
+    <TextView
+      android:id="@+id/tv_contact_logistics"
+      android:layout_width="60dp"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      android:text="联系物流"
+      android:textSize="12sp" />
+    <TextView
+      android:id="@+id/tv_contact_service"
+      android:layout_width="60dp"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      android:text="联系客服"
+      android:textSize="12sp" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:layout_marginTop="10dp">
+    <ImageView
+      android:id="@+id/iv_logistics_image"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_marginTop="5dp"
+      android:layout_marginBottom="5dp"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:src="@mipmap/ic_launcher" />
+    <TextView
+      android:id="@+id/tv_logistics_company"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_marginRight="10dp"
+      android:gravity="center"
+      android:text="圆通速递"
+      android:textColor="@color/gray" />
+    <TextView
+      android:id="@+id/tv_logistics_id"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      android:text="YT1728998309287"
+      android:textColor="@color/gray" />
+    <Space
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1" />
+    <Button
+      android:id="@+id/btn_copy_logistics_id"
+      android:layout_width="50dp"
+      android:layout_height="match_parent"
+      android:background="@null"
+      android:text="复制"
+      android:textColor="@color/gray" />
+    <Button
+      android:id="@+id/btn_share_logistics_id"
+      android:layout_width="50dp"
+      android:layout_height="match_parent"
+      android:background="@null"
+      android:text="分享"
+      android:textColor="@color/gray" />
+  </LinearLayout>
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rv_logistics_progresses"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+</LinearLayout>

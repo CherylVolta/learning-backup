@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>菜鸟驿站后台</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<h1>欢迎来到菜鸟驿站后台！</h1>
+<p>请登录！</p>
+<div>
+  <label>
+    用户名称：
+    <input id="userName" type="text">
+  </label>
+  <button id="login">登录</button>
+</div>
+<script>
+  $(document).ready(function () {
+    $('#login').click(function () {
+      const userName = $('#userName').val()
+      if (userName) {
+        $.ajax({
+          url: '/parcel/queryByUserName?userName=' + userName,
+          type: 'GET',
+          contentType: 'application/json',
+          success: function (data) {
+            console.log(data)
+            window.location.href = '/parcels-manager?userName=' + userName
+          }
+        })
+      } else {
+        alert('请输入用户名！')
+      }
+    })
+  })
+</script>
+</body>
+</html>

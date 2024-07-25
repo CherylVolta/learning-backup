@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".ui.my.MyFragment">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@mipmap/bg_my_head">
+    <ImageView
+      android:layout_width="25dp"
+      android:layout_height="25dp"
+      android:layout_marginRight="30dp"
+      android:layout_above="@id/ll_head_bar"
+      android:layout_toLeftOf="@+id/iv_settings"
+      android:src="@mipmap/ic_service"
+      app:tint="?colorOnBackground" />
+    <ImageView
+      android:id="@+id/iv_settings"
+      android:layout_width="25dp"
+      android:layout_height="25dp"
+      android:layout_marginRight="20dp"
+      android:layout_above="@id/ll_head_bar"
+      android:layout_alignParentEnd="true"
+      android:src="@mipmap/ic_my_set"
+      app:tint="?colorOnBackground" />
+    <LinearLayout
+      android:id="@+id/ll_head_bar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true">
+      <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/ic_default_head"
+        app:shapeAppearanceOverlay="@style/CircleImageView" />
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+          android:textStyle="bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="昵称"
+          android:textColor="?colorOnBackground"
+          android:textSize="18sp" />
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:text="胖乖生活已陪伴您453天" />
+      </LinearLayout>
+    </LinearLayout>
+  </RelativeLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="@drawable/bg_card_view"
+    android:gravity="center_vertical">
+    <ImageView
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_marginLeft="20dp"
+      android:layout_marginRight="10dp"
+      android:src="@mipmap/ic_my_integral" />
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="胖乖积分 15"
+      android:textColor="?colorOnBackground" />
+    <Space
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1" />
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="10dp"
+      android:layout_gravity="center"
+      android:text="积分当钱花" />
+    <ImageView
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_marginRight="20dp"
+      android:src="@mipmap/ic_arrow_right_48"
+      app:tint="?colorOnBackground" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:paddingTop="10dp"
+    android:background="@drawable/bg_card_view"
+    android:orientation="vertical">
+    <TextView
+      android:textStyle="bold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="20dp"
+      android:text="我的钱包"
+      android:textColor="?colorOnBackground" />
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="10dp"
+      android:paddingBottom="20dp"
+      android:paddingLeft="25dp"
+      android:paddingRight="25dp">
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="0"
+          android:textColor="?colorOnBackground"
+          android:textSize="20sp" />
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="通用小票"
+          android:textColor="?colorOnBackground" />
+      </LinearLayout>
+
+
+      <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="0"
+          android:textColor="?colorOnBackground"
+          android:textSize="20sp" />
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="优惠券"
+          android:textColor="?colorOnBackground" />
+      </LinearLayout>
+
+      <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="0"
+          android:textColor="?colorOnBackground"
+          android:textSize="20sp" />
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="实体卡"
+          android:textColor="?colorOnBackground" />
+      </LinearLayout>
+
+      <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="0"
+          android:textColor="?colorOnBackground"
+          android:textSize="20sp" />
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="VIP 卡"
+          android:textColor="?colorOnBackground" />
+      </LinearLayout>
+    </LinearLayout>
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:background="@drawable/bg_card_view"
+    android:orientation="vertical">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="20dp"
+      android:paddingBottom="20dp"
+      android:gravity="center_vertical">
+      <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@mipmap/ic_my_order" />
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center"
+        android:text="我的订单"
+        android:textColor="?colorOnBackground"
+        android:textSize="16sp" />
+      <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+      <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/ic_arrow_right_48"
+        app:tint="?colorOnBackground" />
+    </LinearLayout>
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginLeft="20dp"
+      android:background="@color/light_gray" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="20dp"
+      android:paddingBottom="20dp"
+      android:gravity="center_vertical">
+      <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@mipmap/ic_my_water" />
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center"
+        android:text="饮水充值单"
+        android:textColor="?colorOnBackground"
+        android:textSize="16sp" />
+      <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+      <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/ic_arrow_right_48"
+        app:tint="?colorOnBackground" />
+    </LinearLayout>
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginLeft="20dp"
+      android:background="@color/light_gray" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="20dp"
+      android:paddingBottom="20dp"
+      android:gravity="center_vertical">
+      <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@mipmap/ic_my_subscribe" />
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center"
+        android:text="我的预约"
+        android:textColor="?colorOnBackground"
+        android:textSize="16sp" />
+      <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+      <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/ic_arrow_right_48"
+        app:tint="?colorOnBackground" />
+    </LinearLayout>
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginLeft="20dp"
+      android:background="@color/light_gray" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="20dp"
+      android:paddingBottom="20dp"
+      android:gravity="center_vertical">
+      <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@mipmap/ic_my_welcome_blog" />
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center"
+        android:text="欢迎吐槽"
+        android:textColor="?colorOnBackground"
+        android:textSize="16sp" />
+      <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+      <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/ic_arrow_right_48"
+        app:tint="?colorOnBackground" />
+    </LinearLayout>
+
+  </LinearLayout>
+
+</LinearLayout>

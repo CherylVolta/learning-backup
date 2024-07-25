@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test 3</title>
+    <script>
+      let person = {
+        _name: 'unset',
+        set name(name) {
+          if (name.length > 4 && name !== /\p{Unified_Ideograph}/u) {
+            this._name = name
+          } else {
+            alert('名字为空或长度小于4或包含中文！')
+          }
+        },
+        get name() {
+          return this._name
+        },
+
+        _class: {
+          major: 'unset',
+          classNumber: 'unset',
+        },
+        set class(clazz) {
+          if (
+            typeof clazz.classNumber === 'number' &&
+            clazz.major.search(/[^\p{Unified_Ideograph}]/u) == -1
+          ) {
+            this._class.major = clazz.major
+            this._class.classNumber = clazz.classNumber
+          } else {
+            alert('课程号非数字或课程名非中文！')
+          }
+        },
+        get class() {
+          return this._class
+        },
+
+        study: function () {
+          alert(
+            this.name +
+              ' 正在学习课程号为 ' +
+              this.class.classNumber +
+              ' 的 ' +
+              this.class.major +
+              ' 课程'
+          )
+        },
+      }
+
+      let id = Symbol('id')
+      person[id] = 0
+      // person.name = 'xa'
+      // person.name = '猪'
+      person.name = 'Xha Hdi'
+      person.class = {
+        major: '高数',
+        classNumber: 0,
+      }
+
+      // for (const key in person) {
+      //     alert(key)
+      // }
+      person.study()
+    </script>
+  </head>
+  <body></body>
+</html>

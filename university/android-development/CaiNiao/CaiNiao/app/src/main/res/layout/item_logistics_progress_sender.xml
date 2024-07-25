@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal">
+
+  <LinearLayout
+    android:layout_width="40dp"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <TextView
+      android:layout_width="25dp"
+      android:layout_height="25dp"
+      android:layout_marginTop="10dp"
+      android:background="@drawable/ic_label_ending_logistics_progress"
+      android:gravity="center"
+      android:text="寄"
+      android:textSize="12sp" />
+    <View
+      android:layout_width="1dp"
+      android:layout_height="match_parent"
+      android:background="@color/gray_gainsborough" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+      android:id="@+id/tv_sender_address"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="来自 重庆市 渝北区 xxxx"
+      android:textColor="@color/gray" />
+    <TextView
+      android:id="@+id/tv_sender_details"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="傻* 19438438250-1438（隐私小号）"
+      android:textColor="@color/gray" />
+    <Space
+      android:layout_width="match_parent"
+      android:layout_height="15dp" />
+  </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<resources>
+  <!-- Base application theme. -->
+  <style name="Theme.CaiNiao" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+    <item name="colorPrimary">@color/blue_azure</item>
+    <item name="colorPrimaryVariant">@color/blue_azure</item>
+    <item name="colorOnPrimary">@color/white</item>
+    <item name="colorSecondary">@color/blue_azure</item>
+    <item name="colorSecondaryVariant">@color/blue_azure</item>
+    <item name="colorOnSecondary">@color/white</item>
+
+    <item name="colorBackgroundColorful">
+      @color/blue_prussian
+    </item>
+    <item name="colorBackgroundDrab">
+      @color/black_lightest
+    </item>
+    <item name="colorOnBackground">
+      @color/white
+    </item>
+
+    <item name="android:statusBarColor">
+      ?colorBackgroundColorful
+    </item>
+    <item name="android:windowBackground">
+      @color/black_lighter
+    </item>
+    <item name="android:textViewStyle">@style/textViewStyle</item>
+  </style>
+
+  <style name="textViewStyle" parent="Widget.AppCompat.TextView">
+    <item name="android:textColor">@color/white</item>
+  </style>
+</resources>

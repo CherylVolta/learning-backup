@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>包裹管理</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    table {
+      width: 100%;
+    }
+
+    table,
+    table td,
+    table th {
+      border: 1px solid #000000;
+    }
+  </style>
+</head>
+<body>
+<h1>欢迎来到包裹管理界面，<span th:text="${userName}"></span>！</h1>
+<!-- 包裹列表 -->
+<div>
+  <h4>包裹列表</h4>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>名称</th>
+      <th>物流 ID</th>
+      <th>物流公司</th>
+      <th>物流状态</th>
+      <th>物流进度</th>
+      <th>寄件人</th>
+      <th>收件人</th>
+    </tr>
+    <tr th:each="parcel:${parcels}">
+      <td><span th:text="${parcel.getId()}"></span></td>
+      <td><span th:text="${parcel.getTitle()}"></span></td>
+      <td><span th:text="${parcel.getLogisticsId()}"></span></td>
+      <td><span th:text="${parcel.getLogisticsCompany()}"></span></td>
+      <td><span th:text="${parcel.getLogisticsStatus()}"></span></td>
+      <td>
+        <ul th:each="logisticsProgress:${parcel.getLogisticsProgresses()}">
+          <li>
+            <p>时间：<span th:text="${logisticsProgress.getDatetime()}"></span>
+            </p>
+            <p>状态：<span th:text="${logisticsProgress.getStatus()}"></span>
+            </p>
+            <p>消息：<span th:text="${logisticsProgress.getMessage()}"></span>
+            </p>
+            <br>
+          </li>
+        </ul>
+        <p style="text-align: center"><a
+            onclick="showAddLogisticsProgressDialog(this)"
+            href="javascript:void(0)"
+            th:data-id="${parcel.getId()}">添加</a></p>
+      </td>
+      <td>
+        <p>
+          姓名：<span th:text="${parcel.getSender().getName()}"></span>
+        </p>
+        <p>
+          电话：<span th:text="${parcel.getSender().getTelephone()}"></span>
+        </p>
+        <p>
+          地址：<span th:text="${parcel.getSender().getAddress()}"></span>
+        </p>
+      </td>
+      <td>
+        <p>
+          姓名：<span th:text="${parcel.getReceiver().getName()}"></span>
+        </p>
+        <p>
+          电话：<span th:text="${parcel.getReceiver().getTelephone()}"></span>
+        </p>
+        <p>
+          地址：<span th:text="${parcel.getReceiver().getAddress()}"></span>
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+<!-- dialog -->
+<div id="dialog"
+     style="position:absolute;display: none;height: 100%;width: 100%;left: 0;top: 0;background: #555555EE">
+  <div
+      style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);background: #ffffff;padding: 20px">
+    <label for="datetime">时间：</label>
+    <input type="text" id="datetime" name="datetime" required>
+    <br>
+    <br>
+    <label id="datetime-example" for="datetime" style="color: gray">如："01.01
+      08:00"</label>
+    <br>
+    <br>
+    <label for="status">状态：
+      <select id="status" name="status">
+        <option value="UNSHIPPED" selected>未发货</option>
+        <option value="ON_DELIVERY">派送中</option>
+        <option value="IN_TRANSIT">运输中</option>
+        <option value="AWAITING_PICKUP">待取件</option>
+        <option value="HAS_SIGNED">已签收</option>
+        <option value="UNKNOWN">未知</option>
+      </select>
+    </label>
+    <br>
+    <br>
+    <label for="message">消息：</label>
+    <input type="text" id="message" name="message" required>
+    <br>
+    <br>
+    <button type="button" id="add-logistics-progress">提交</button>
+    <button type="button" id="cancel">取消</button>
+  </div>
+</div>
+<script>
+  let parcelId
+
+  function showAddLogisticsProgressDialog(view) {
+    // 显示 dialog
+    $('#dialog').show();
+    parcelId = view.getAttribute('data-id');
+  }
+
+  $(document).ready(function () {
+    // 以当前时间为基准更新时间样例文本
+    let now = new Date()
+    let datetimeExample
+    // 月
+    if (now.getMonth() < 10) {
+      datetimeExample = '0' + (now.getMonth() + 1) + '.'
+    } else {
+      datetimeExample = now.getMonth() + 1 + '.'
+    }
+    // 日
+    if (now.getDate() < 10) {
+      datetimeExample += '0' + now.getDate() + ' '
+    } else {
+      datetimeExample += now.getDate() + ' '
+    }
+    // 小时
+    if (now.getHours() < 10) {
+      datetimeExample += '0' + now.getHours() + ':'
+    } else {
+      datetimeExample += now.getHours() + ':'
+    }
+    // 分钟
+    if (now.getMinutes() < 10) {
+      datetimeExample += '0' + now.getMinutes()
+    } else {
+      datetimeExample += now.getMinutes()
+    }
+    $('#datetime-example').text('如：' + datetimeExample)
+
+    // 取消
+    $('#cancel').click(function () {
+      $('#dialog').hide();
+    })
+
+    // 提交
+    $('#add-logistics-progress').click(function () {
+      let datetime = $('#datetime').val()
+      let status = $('#status').val()
+      let message = $('#message').val()
+
+      // 检查用户输入
+      if (/(0[1-9]|1[0-2]).(0[1-9]|[1-2][0-9]|3[0-1]) ([0-1][0-9]|2[0-4]):([0-5][0-9]|60)/.test(
+          datetime) === false) {
+        alert('时间格式错误！')
+        return
+      }
+
+      // 发送请求
+      $.ajax({
+        url: '/logistics-progress/add',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(
+            {
+              id: parcelId,
+              logisticsProgresses: [{
+                datetime: datetime,
+                status: status,
+                message: message
+              }]
+            }),
+        success: function (data) {
+          console.log(data);
+          alert('添加物流进度成功！');
+          window.location.reload();
+        },
+        error: function () {
+          alert('添加物流进度失败！');
+        }
+      })
+    })
+  })
+</script>
+</body>
+</html>

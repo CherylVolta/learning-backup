@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="blue_prussian">#111d34</color>
+  <color name="blue_azure">#1674ff</color>
+  <color name="blue_alice">#EFF2F7</color>
+  <color name="black">#000000</color>
+  <color name="black_lighter">#111111</color>
+  <color name="black_lightest">#1a1a1a</color>
+  <color name="gray_iron">#595959</color>
+  <color name="gray">#808080</color>
+  <color name="gray_gainsborough">#D3D3D3</color>
+  <color name="white">#FFFFFF</color>
+</resources>

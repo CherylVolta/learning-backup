@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorBackgroundColorful"
+    android:orientation="vertical">
+    <TextView
+      android:id="@+id/tv_title"
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:gravity="center"
+      android:text="寄件"
+      android:textSize="20sp" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_marginTop="3dp"
+    android:padding="15dp"
+    android:orientation="horizontal">
+
+    <ImageView
+      android:layout_width="96dp"
+      android:layout_height="81dp"
+      android:layout_gravity="center_vertical"
+      android:src="@drawable/ic_parcel_dispatch_text" />
+
+    <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:paddingStart="8dp"
+      android:orientation="vertical">
+
+      <EditText
+        android:id="@+id/send_name"
+        style="@style/etOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:padding="8dp"
+        android:enabled="false"
+        android:hint="姓名"
+        android:textColor="@color/gray" />
+
+      <EditText
+        android:id="@+id/send_address"
+        style="@style/etOne"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:hint="地址" />
+
+      <EditText
+        android:id="@+id/send_tel"
+        style="@style/etOne"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:hint="电话" />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+  <View style="@style/HLine" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_marginTop="3dp"
+    android:padding="15dp"
+    android:orientation="horizontal">
+
+    <ImageView
+      android:layout_width="99dp"
+      android:layout_height="87dp"
+      android:layout_gravity="center_vertical"
+      android:src="@drawable/ic_parcel_pickup_text" />
+
+    <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:paddingStart="8dp"
+      android:orientation="vertical">
+
+      <EditText
+        android:id="@+id/recipient_name"
+        style="@style/etOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:padding="8dp"
+        android:hint="姓名" />
+
+      <EditText
+        android:id="@+id/recipient_address"
+        style="@style/etOne"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:hint="地址" />
+
+      <EditText
+        android:id="@+id/recipient_tel"
+        style="@style/etOne"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:hint="电话" />
+
+    </LinearLayout>
+  </LinearLayout>
+
+  <View style="@style/HLine" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:orientation="horizontal">
+
+    <TextView
+      style="@style/tvTwo"
+      android:text="寄件方式" />
+
+    <RadioGroup
+      android:id="@+id/send_ways"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginLeft="40dp"
+      android:orientation="horizontal">
+
+      <RadioButton
+        android:id="@+id/pick_up"
+        style="@style/tvThree"
+        android:layout_marginLeft="7dp"
+        android:checked="true"
+        android:text="上门取件" />
+
+      <RadioButton
+        android:id="@+id/self_delivery"
+        style="@style/tvThree"
+        android:text="服务点自寄" />
+    </RadioGroup>
+
+
+  </LinearLayout>
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:padding="15dp"
+    android:orientation="horizontal">
+
+    <TextView
+      style="@style/tvTwo"
+      android:text="物品名称" />
+
+    <EditText
+      android:id="@+id/name"
+      style="@style/etOne" />
+
+  </LinearLayout>
+
+  <View style="@style/HLine" />
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+    <TextView
+      android:id="@+id/btn_submit"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="10dp"
+      android:layout_marginRight="10dp"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentRight="true"
+      android:paddingTop="10dp"
+      android:paddingBottom="10dp"
+      android:paddingLeft="20dp"
+      android:paddingRight="20dp"
+      android:background="?colorBackgroundColorful"
+      android:text="立即下单" />
+  </RelativeLayout>
+
+</LinearLayout>

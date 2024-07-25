@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" factoryName="Application" name="Q1Kruskal" nameIsGenerated="true"
+    type="Application">
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="g2.q1.*"/>
+        <option name="ENABLED" value="true"/>
+      </pattern>
+    </extension>
+    <method v="2">
+      <option enabled="true" name="Make"/>
+    </method>
+    <module name="algorithm-endtask"/>
+    <option name="MAIN_CLASS_NAME" value="g2.q1.Q1Kruskal"/>
+    <option name="VM_PARAMETERS"
+      value="--module-path=&quot;c:\users\oddy\projects\idea\algorithm-endtask\lib&quot; --add-modules=javafx.controls"/>
+  </configuration>
+</component>

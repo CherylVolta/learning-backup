@@ -1,0 +1,36 @@
+#content {
+  position: relative;
+
+  padding: 35px 0 80px;
+
+  background-color: rgb(247, 246, 244);
+}
+
+#content img {
+  display: block;
+
+  margin: 0 auto;
+}
+
+@font-face {
+  font-family: 'FZPWJW';
+  src: url('../fonts/FZPWJW.ttf');
+}
+
+#content #content-prompt {
+  position: absolute;
+  top: 173px;
+  left: calc(50% - 374px);
+
+  width: 748px;
+  height: 106px;
+  margin: 0 auto;
+
+  line-height: 106px;
+  font-size: 48px;
+  font-family: 'FZPWJW';
+  text-align: center;
+  color: rgb(143, 82, 25);
+
+  background-color: rgb(247, 246, 244);
+}

@@ -1,0 +1,145 @@
+* {
+  font-family: '仿宋';
+  font-weight: bold;
+  margin: 0px;
+}
+
+.form-header .form-header-title,
+.form-row,
+.form-row .form-row-title,
+.form-row .form-row-input-area {
+  display: flex;
+  align-items: center;
+}
+
+.form-header .form-header-title {
+  background-color: rgb(243, 243, 243);
+}
+
+.form-header .form-header-title .form-header-title {
+  font-size: larger;
+  padding: 15px 5px 15px 20px;
+}
+
+.form-header .form-header-title .form-header-title-helper,
+.form-row .form-row-title .form-row-title-helper {
+  height: 20px;
+  width: 20px;
+}
+
+.form-header .form-header-title .form-header-title-prompt {
+  color: gray;
+  margin-left: 20px;
+}
+
+.form-header .form-header-title .form-header-custom-element {
+  position: absolute;
+  right: 25px;
+}
+
+.form-row {
+  margin-top: 60px;
+}
+
+.form-row-lite {
+  margin-top: 40px;
+}
+
+.form-row .form-row-title {
+  position: absolute;
+  right: 85%;
+}
+
+.form-row .form-row-title .form-row-not-null {
+  color: red;
+  margin: 0px 5px;
+}
+
+.form-row .form-row-title .form-row-title-helper {
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.form-row .form-row-input-area {
+  position: absolute;
+  left: 16%;
+}
+
+.form-row .form-row-input-area .form-row-input-prompt {
+  color: gray;
+}
+
+.form-row .form-row-input-area .form-row-input-link:link,
+.form-row .form-row-input-area .form-row-input-link:visited {
+  text-decoration: none;
+}
+
+.form-row .form-row-input-area .form-row-input-link:hover {
+  text-decoration: underline;
+}
+
+.form-row .form-row-input-area .form-row-text-input,
+.form-row .form-row-input-area .form-row-button-input {
+  margin: 10px 10px 10px 0px;
+  padding: 5px;
+}
+
+.form-row .form-row-input-area .form-row-text-input {
+  width: 200px;
+}
+
+.form-row .form-row-input-area .form-row-radio-input-label,
+.form-row .form-row-input-area .form-row-checkbox-input-label {
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+.form-row .form-row-input-area .form-row-button-input {
+  flex-wrap: wrap;
+}
+
+.form-row .form-row-input-area .form-row-select {
+  width: 180px;
+  padding-block: 5px;
+}
+
+.form-footer {
+  margin-block: 70px;
+}
+
+#product-name,
+#product-trade-port {
+  width: 300px;
+}
+
+#min-order-quantity,
+#product-min-order-quantity-unit,
+#FOB-price,
+#FOB-price-unit {
+  width: 100px;
+}
+
+#rich-text-product-description-editor-holder {
+  height: 400px;
+}
+
+#rich-text-product-description-editor {
+  width: 1000px;
+  height: 400px;
+  visibility: hidden;
+}
+
+#form-row-title-inline-right {
+  right: 45.5%;
+}
+
+#form-row-input-area-inline-right {
+  left: 55%;
+}
+
+#product-show-field-customization
+  .form-row
+  .form-row-input-area
+  .form-row-checkbox-input-label {
+  width: 70px;
+}

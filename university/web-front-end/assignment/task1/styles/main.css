@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/*
+  css 属性规范：
+    <位置>：position、top、right、z-index、display、float 等；
+    <大小>：width、height、padding、margin；
+    <文字>：font、line-height、letter-spacing、color、text-align 等；
+    <背景>：background、border 等；
+    <其他>：animation、transition 等；
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.text-holder, .content__sidebar, .content__main, .navigation-bar {
+  color: gray;
+  font-size: 30px;
+  text-align: center;
+  background-color: rgb(33, 33, 33);
+}
+
+.navigation-bar {
+  height: 100px;
+  max-width: min(1200px, 80%);
+  margin: 0 auto;
+  line-height: 100px;
+}
+
+.content {
+  width: min(1200px, 80%);
+  margin: 0 auto;
+}
+.content__row {
+  height: 500px;
+  margin: 10px auto;
+  line-height: 500px;
+}
+.content__row--flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content__main {
+  width: calc(70% - 5px);
+}
+.content__sidebar {
+  width: calc(30% - 5px);
+}/*# sourceMappingURL=main.css.map */

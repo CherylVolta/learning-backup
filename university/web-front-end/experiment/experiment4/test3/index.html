@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test 3</title>
+    <script>
+      let subject = [
+        ['SQL SERVER', 'C# OOP'],
+        ['WEB FORM', 'HTML/CSS/JAVASCRIPT', 'ORACLE'],
+        ['ASP.NET MVC', 'LINQ'],
+      ]
+
+      document.write('subject数组的长度：' + subject.length + '<br />')
+      for (const index in subject) {
+        document.write(
+          'subject数组对象的第' +
+            index +
+            '个元素是另一个数组，这个小数组的长度：' +
+            subject[index].length +
+            '<br />'
+        )
+        for (const index2 in subject[index]) {
+          document.write(
+            '第' + index2 + '个元素：' + subject[index][index2] + '<br />'
+          )
+        }
+        document.write('<hr />')
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

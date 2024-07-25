@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide 1</title>
+  </head>
+  <body>
+    <input type="button" id="button" value="ajax 请求" onclick="ajax()" />
+    <div id="resText"></div>
+    <script>
+      function ajax() {
+        let request = null
+        if (window.ActiveXObject) {
+          request = new ActiveXObject('Microsoft.XMLHTTP')
+        } else if (window.XMLHttpRequest) {
+          request = new XMLHttpRequest()
+        }
+
+        function doRequest() {
+          if (request.readyState === 4) {
+            if (request.status === 200) {
+              document.getElementById('resText').innerHTML =
+                request.responseText
+            }
+          }
+        }
+
+        if (request != null) {
+          request.open(
+            'GET',
+            'https://jsonplaceholder.typicode.com/todos/1',
+            true
+          )
+          request.onreadystatechange = doRequest
+          request.send(null)
+        }
+      }
+    </script>
+  </body>
+</html>

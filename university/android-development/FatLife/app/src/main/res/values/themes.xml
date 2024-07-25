@@ -1,0 +1,32 @@
+<resources>
+
+  <style name="Theme.FatLife" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <item name="colorPrimary">@color/blue_500</item>
+    <item name="colorPrimaryVariant">@color/blue_700</item>
+    <item name="colorOnPrimary">@color/white</item>
+
+    <item name="colorSecondary">@color/blue_500</item>
+    <item name="colorSecondaryVariant">@color/blue_700</item>
+    <item name="colorOnSecondary">@color/black</item>
+
+    <item name="android:statusBarColor">@android:color/transparent</item>
+    <item name="android:navigationBarColor">@android:color/transparent</item>
+    <item name="android:windowLightStatusBar">true</item>
+
+    <item name="android:windowBackground">@color/background_color</item>
+    <item name="colorOnBackground">@color/black</item>
+    <item name="colorOnBackgroundSecondary">@color/gray</item>
+
+    <item name="android:textViewStyle">@style/TextViewStyle</item>
+  </style>
+
+  <style name="TextViewStyle">
+    <item name="android:textColor">?colorOnBackgroundSecondary</item>
+  </style>
+
+  <style name="CircleImageView">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">50%</item>
+  </style>
+
+</resources>

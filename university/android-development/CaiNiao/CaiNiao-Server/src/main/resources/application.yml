@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: CaiNiao-Server
+  datasource:
+    url: 'jdbc:mysql://mysql-service:3306/cainiao'
+    username: root
+    password: oddy
+  jpa:
+    show-sql: true
+  thymeleaf:
+    cache: false

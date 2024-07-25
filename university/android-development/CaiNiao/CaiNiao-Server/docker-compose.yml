@@ -1,0 +1,23 @@
+services:
+  mysql-service:
+    container_name: mysql-service
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: oddy
+      TZ: 'Asia/Shanghai'
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_20240505:/var/lib/mysql
+    restart: always
+  main-service:
+    container_name: main-service
+    build: .
+    ports:
+      - '8080:8080'
+    restart: always
+
+volumes:
+  mysql_20240505:
+    external: true

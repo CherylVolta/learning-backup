@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:paddingTop="5dp"
+  android:paddingBottom="5dp"
+  android:orientation="vertical">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:background="?android:windowBackground"
+    android:gravity="center_vertical">
+    <TextView
+      android:id="@+id/tv_make_time"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="2024-05-18 20:59:54" />
+    <Space
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1" />
+    <TextView
+      android:id="@+id/tv_delete"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="删除" />
+  </LinearLayout>
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:background="@color/light_gray" />
+
+  <LinearLayout
+    android:id="@+id/ll_detail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:background="?android:windowBackground"
+    android:gravity="center_vertical">
+    <ImageView
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_marginRight="10dp"
+      android:src="@mipmap/ic_home_wash_2" />
+    <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center_vertical"
+      android:orientation="vertical">
+      <TextView
+        android:id="@+id/tv_wm"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1号洗衣机"
+        android:textColor="?colorOnBackground"
+        android:textSize="18sp" />
+      <TextView
+        android:id="@+id/tv_wt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="标准洗"
+        android:textColor="?colorOnBackground" />
+    </LinearLayout>
+    <Space
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1" />
+    <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="right|center_vertical"
+      android:orientation="vertical">
+      <TextView
+        android:id="@+id/tv_amount"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="￥2.85"
+        android:textColor="?colorOnBackground" />
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="5dp"
+          android:text="实付" />
+        <TextView
+          android:id="@+id/tv_total_amount"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="￥2.85"
+          android:textColor="#F44336" />
+      </LinearLayout>
+    </LinearLayout>
+  </LinearLayout>
+</LinearLayout>

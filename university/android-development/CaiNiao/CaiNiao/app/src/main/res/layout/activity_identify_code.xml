@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <TextView
+    android:id="@+id/tv_title"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="?colorBackgroundColorful"
+    android:gravity="center"
+    android:text="身份码"
+    android:textSize="20sp" />
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <RelativeLayout
+      android:id="@+id/rl_identity_code_container"
+      android:layout_width="350dp"
+      android:layout_height="200dp"
+      android:layout_centerInParent="true"
+      android:background="@drawable/bg_identity_code"
+      android:visibility="invisible">
+
+      <ImageView
+        android:id="@+id/identity_code_image"
+        android:layout_width="320dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY" />
+
+      <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+        <TextView
+          android:id="@+id/tv_identity_code_1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="?colorOnBackground" />
+        <Space
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" />
+        <TextView
+          android:id="@+id/tv_identity_code_2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="?colorOnBackground" />
+        <Space
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" />
+        <TextView
+          android:id="@+id/tv_identity_code_3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="?colorOnBackground" />
+        <Space
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" />
+        <TextView
+          android:id="@+id/tv_identity_code_4"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="?colorOnBackground" />
+        <Space
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" />
+        <TextView
+          android:id="@+id/tv_identity_code_5"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="?colorOnBackground" />
+        <Space
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" />
+        <TextView
+          android:id="@+id/tv_identity_code_6"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="?colorOnBackground" />
+        <Space
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" />
+        <TextView
+          android:id="@+id/tv_identity_code_7"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="?colorOnBackground" />
+        <Space
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" />
+        <TextView
+          android:id="@+id/tv_identity_code_8"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="?colorOnBackground" />
+        <Space
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" />
+        <TextView
+          android:id="@+id/tv_identity_code_9"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="?colorOnBackground" />
+      </LinearLayout>
+
+    </RelativeLayout>
+
+
+  </RelativeLayout>
+
+
+</LinearLayout>

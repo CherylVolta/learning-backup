@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+#box {
+  position: absolute;
+  width: 1200px;
+  height: 450px;
+  overflow: hidden;
+}
+
+#box .btn {
+  display: none;
+  position: absolute;
+  width: 25px;
+  cursor: pointer;
+}
+
+#box:has(:hover) .btn.display {
+  display: block;
+}
+
+#box #play {
+  bottom: 25px;
+  left: calc(50% - 12.5px);
+}
+
+#box #pause {
+  bottom: 25px;
+  left: calc(50% - 12.5px);
+}
+
+#box #previous {
+  top: calc(50% - 12.5px);
+  left: 25px;
+}
+
+#box #next {
+  top: calc(50% - 12.5px);
+  right: 25px;
+}
+
+#imgs-box {
+  position: absolute;
+  display: flex;
+  width: 2400px;
+  height: 450px;
+}
+
+#imgs-box img {
+  width: 1200px;
+  height: 450px;
+}

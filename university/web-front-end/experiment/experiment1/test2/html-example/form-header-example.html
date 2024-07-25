@@ -1,0 +1,68 @@
+<!-- 结构 -->
+<div class="form-header">
+  <!-- 头部内容，必须 -->
+  <div class="form-header-content">
+    <!-- 头部标题，必须 -->
+    <h1 class="form-header-title"></h1>
+
+    <!-- 头部帮助按钮，可不用 -->
+    <img class="form-header-title-helper" src="" alt="" />
+
+    <!-- 头部提示文案，可不用 -->
+    <span class="form-header-title-prompt"></span>
+
+    <!-- 自定义组件，用于存放 radio button 等元素（右对齐），可不用 -->
+    <div class="form-header-custom-element"></div>
+  </div>
+
+  <!-- 头部分割线，必须 -->
+  <hr class="form-header-hr" />
+</div>
+
+<!-- 例子 -->
+<!-- 内容【标题】、分割线 -->
+<div class="form-header">
+  <div class="form-header-content">
+    <h1 class="form-header-title">产品基本信息</h1>
+  </div>
+  <hr class="form-header-hr" />
+</div>
+
+<!-- 内容【标题、帮助、提示】、分割线 -->
+<div class="form-header">
+  <div class="form-header-content">
+    <h1 class="form-header-title">展示字段自定义</h1>
+    <img
+      class="form-header-title-helper"
+      src="./pictures/help.png"
+      alt="help" />
+    <span class="form-header-title-prompt"
+      >可以从产品属性、自定义属性、交易条件中选择2个自定义信息用于展示厅产品介绍页面的优先展示。</span
+    >
+  </div>
+  <hr class="form-header-hr" />
+</div>
+
+<!-- 内容【标题、帮助、提示、自定义组件】、分割线 -->
+<div class="form-header">
+  <div class="form-header-content">
+    <h1 class="form-header-title">产品贸易</h1>
+    <img
+      class="form-header-title-helper"
+      src="./pictures/help.png"
+      alt="help" />
+    <span class="form-header-title-prompt"
+      >详细填写您的报价，让其更易被买家关注。</span
+    >
+    <div class="form-header-custom-element">
+      <input
+        id="product-trade-success"
+        type="checkbox"
+        form="product-trade"
+        value="product-trade-success"
+        name="product-trade-success" />
+      <label for="product-trade-success">可洽谈</label>
+    </div>
+  </div>
+  <hr class="form-header-hr" />
+</div>

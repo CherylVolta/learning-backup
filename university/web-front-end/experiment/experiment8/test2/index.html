@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test 2</title>
+    <style>
+      #options-boxes {
+        clear: both;
+      }
+
+      #options-boxes > div {
+        float: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 20px;
+      }
+
+      #options-boxes > div > div {
+        border: 3px inset;
+        width: 150px;
+        height: 250px;
+        margin: 0 20px 20px;
+      }
+
+      #options-boxes > div > div > .option.selected {
+        background-color: blue;
+        color: white;
+      }
+
+      #options-boxes > div > button {
+        display: block;
+        border: none;
+        margin: 5px;
+        padding: 10px;
+      }
+
+      #options-boxes > div > button:active {
+        background-color: silver;
+      }
+    </style>
+    <script src="../a-public-scripts/jquery-3.6.1.min.js"></script>
+  </head>
+  <body>
+    <div id="options-boxes">
+      <div id="left">
+        <div id="left-box">
+          <div class="option">选项1</div>
+          <div class="option">选项2</div>
+          <div class="option">选项3</div>
+          <div class="option">选项4</div>
+          <div class="option">选项5</div>
+          <div class="option">选项6</div>
+          <div class="option">选项7</div>
+          <div class="option">选项8</div>
+        </div>
+        <button id="add-selected">选中添加到右边&gt;&gt;</button>
+        <button id="add-all">全部添加到右边&gt;&gt;</button>
+      </div>
+      <div id="right">
+        <div id="right-box"></div>
+        <button id="remove-selected">&lt;&lt;选中删除到左边</button>
+        <button id="remove-all">&lt;&lt;全部删除到左边</button>
+      </div>
+    </div>
+    <script>
+      $(function () {
+        let count = 1
+        $('div.option').each(function () {
+          $(this).attr('data-id', count++)
+        })
+
+        function sortOptions(box) {
+          function compare(a, b) {
+            if (a.getAttribute('data-id') > b.getAttribute('data-id')) {
+              return 1
+            } else if (a.getAttribute('data-id') < b.getAttribute('data-id')) {
+              return -1
+            } else {
+              return 0
+            }
+          }
+
+          switch (box) {
+            case 'l':
+              let lOption = $('div#left-box div.option')
+              lOption.sort(compare)
+              lOption.detach().appendTo('div#left-box')
+              break
+            case 'r':
+              let rOption = $('div#right-box div.option')
+              rOption.sort(compare)
+              rOption.detach().appendTo('div#right-box')
+          }
+        }
+
+        // 选项单击事件
+        $('div.option').click(function () {
+          $(this).toggleClass('selected')
+        })
+
+        // 选中添加到右边
+        $('button#add-selected').click(function () {
+          let option = $('div#left-box div.option.selected')
+
+          if (option.length === 0) return
+
+          $('div#right-box').append(option.removeClass('selected'))
+          sortOptions('r')
+        })
+
+        // 全部添加到右边
+        $('button#add-all').click(function () {
+          let option = $('div#left-box div.option')
+
+          if (option.length === 0) return
+
+          $('div#right-box').append(option.removeClass('selected'))
+          sortOptions('r')
+        })
+
+        // 选中删除到左边
+        $('button#remove-selected').click(function () {
+          let option = $('div#right-box div.option.selected')
+
+          if (option.length === 0) return
+
+          $('div#left-box').append(option.removeClass('selected'))
+          sortOptions('l')
+        })
+
+        // 全部删除到左边
+        $('button#remove-all').click(function () {
+          let option = $('div#right-box div.option')
+
+          if (option.length === 0) return
+
+          $('div#left-box').append(option.removeClass('selected'))
+          sortOptions('l')
+        })
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="boot" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="CaiNiao-Server" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="org.seagulls.cainiaoserver.CaiNiaoServerApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

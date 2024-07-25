@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/lv_item"
+  android:layout_width="match_parent"
+  android:layout_height="120dp"
+  android:padding="10dp">
+
+  <LinearLayout
+    android:layout_width="100dp"
+    android:layout_height="100dp">
+    <ImageView
+      android:id="@+id/iv_parcel_image_home_fragment"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scaleType="centerCrop"
+      android:src="@mipmap/ic_launcher" />
+  </LinearLayout>
+
+  <GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="10dp"
+    android:columnCount="1"
+    android:rowCount="3"
+    android:useDefaultMargins="true">
+
+    <TextView
+      android:id="@+id/tv_logistics_status"
+      android:textStyle="bold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="未发货"
+      android:textColor="?colorOnBackground"
+      android:textSize="20sp" />
+
+    <TextView
+      android:id="@+id/tv_parcel_title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:ellipsize="end"
+      android:maxLines="1"
+      android:text="天猫 | 大容量xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      android:textColor="@color/gray_iron" />
+
+    <TextView
+      android:id="@+id/tv_logistics_detail"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:ellipsize="end"
+      android:maxLines="1"
+      android:text="圆通速递：快件离开【xxxx转运中心】，正在……"
+      android:textColor="@color/gray_iron" />
+
+  </GridLayout>
+
+</LinearLayout>
