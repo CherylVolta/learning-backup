@@ -8,8 +8,8 @@
   <h4>鲁迅说过：“知识应该存进脑子，存不进脑子那只能存在这里了。”</h4>
 
   <p>
-    <a href="../../stargazers"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Charlott2/learning-backup?style=flat"></a>
-    <a href="LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/Charlott2/config-files"></a>
+    <a href="../../stargazers"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/CherylVolta/learning-backup?style=flat"></a>
+    <a href="LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/CherylVolta/config-files"></a>
   </p>
 
   <p>
