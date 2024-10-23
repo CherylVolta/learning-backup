@@ -8,7 +8,7 @@
   <h4>鲁迅说过：“知识应该存进脑子，存不进脑子那只能存在这里了。”</h4>
 
   <p>
-    <a href="../../stargazers">
+    <a href="https://github.com/Lyana-nullptr/learning-backup/stargazers">
       <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Lyana-nullptr/learning-backup?style=flat">
     </a>
     <a href="LICENSE">
